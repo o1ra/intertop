@@ -15,8 +15,8 @@ class Config(pydantic.BaseSettings):
 
     platformName: str = os.getenv('platformName', 'android')
     platformVersion: str = os.getenv('platformVersion', '13.0')
-    deviceName: str = os.getenv('deviceName', 'Samsung Galaxy S23 Ultra')
-    app: str = os.getenv('app')
+    deviceName: str = os.getenv('deviceName')
+    app: str = os.getenv('app', path.to_resource('intertop-2-78-0.apk'))
     udid: str = os.getenv('udid')
 
     # --- > BrowserStack Capabilities ---
