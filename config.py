@@ -9,7 +9,7 @@ EnvContext = Literal['local', 'bstack']
 
 class Config(pydantic.BaseSettings):
     # --- Context ---
-    context: EnvContext = 'bstack'
+    context = os.getenv('context', 'bstack')
 
     # --- Appium Capabilities ---
 
@@ -30,37 +30,28 @@ class Config(pydantic.BaseSettings):
     # --- Selene ---
     timeout: float = 30.0
 
-    @property
-    def run_on_browserstack(self):
-        return 'hub.browserstack.com' in self.remote_url
-
-    @property
-    def driver_options(self):
+    def driver_options(self, context):
         options = UiAutomator2Options()
-        if self.deviceName:
+
+        if context == 'local_emulator':
+            options.set_capability('remote_url', self.remote_url)
+            options.set_capability('udid', self.udid)
+            options.set_capability('app', self.app)
+
+        if context == 'bstack':
+            options.set_capability('remote_url', self.remote_url)
             options.set_capability('deviceName', self.deviceName)
-
-        if self.platformName:
             options.set_capability('platformName', self.platformName)
-        options.set_capability('app', path.to_resource(self.app) if self.app and (
-                    self.app.startswith('./') or self.app.startswith('../')) else self.app)
-
-        if self.udid:
-            options.udid = self.udid
-
-        if self.run_on_browserstack:
-            options.load_capabilities(
-                {
-                    'platformVersion': self.platformVersion,
-                    'noReset': False,
-                    'bstack:options': {
-                        'projectName': self.projectName,
-                        'buildName': self.buildName,
-                        'sessionName': self.sessionName,
-                        'userName': self.userName,
-                        'accessKey': self.accessKey
-                    },
-                }
+            options.set_capability('platformVersion', self.platformVersion)
+            options.set_capability('app', self.app)
+            options.set_capability(
+                'bstack:options', {
+                    'projectName': 'First Python project',
+                    'buildName': 'browserstack-build-1',
+                    'sessionName': 'BStack first_test',
+                    'userName': self.userName,
+                    'accessKey': self.accessKey,
+                },
             )
 
         return options
