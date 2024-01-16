@@ -34,8 +34,8 @@ def context(request):
 
 @pytest.fixture(scope='function', autouse=True)
 def android_mobile_management(context):
-    options = config.to_driver_options(context=context)
-    with allure.step('setup app session'):
+    options = config.driver_options(context=context)
+    with allure.step('init app session'):
         browser.config.driver = webdriver.Remote(
             options.get_capability('remote_url'),
             options=options
