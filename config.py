@@ -46,9 +46,9 @@ class Config(pydantic.BaseSettings):
             options.set_capability('app', self.app)
             options.set_capability(
                 'bstack:options', {
-                    'projectName': 'First Python project',
-                    'buildName': 'browserstack-build-1',
-                    'sessionName': 'BStack first_test',
+                    'projectName': self.projectName,
+                    'buildName': self.buildName,
+                    'sessionName': self.sessionName,
                     'userName': self.userName,
                     'accessKey': self.accessKey,
                 },
