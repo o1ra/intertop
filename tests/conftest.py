@@ -37,7 +37,7 @@ def android_mobile_management(context):
     options = config.driver_options(context=context)
     with allure.step('init app session'):
         browser.config.driver = webdriver.Remote(
-            options.get_capability('remote_url'),
+            config.remote_url,
             options=options
         )
 
