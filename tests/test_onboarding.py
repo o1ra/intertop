@@ -5,8 +5,8 @@ from selene import browser, have, be
 
 def test_onboarding():
     with allure.step('Выбор страны '):
-        results = browser.element((AppiumBy.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.Button[1]'))
-        results.should(have.exact_text("Казахстан"))
+        results = browser.element((AppiumBy.XPATH, '//android.widget.Button[2]'))
+        results.should(have.exact_text("Казахстан")).click()
 
     with allure.step('Выбор пола'):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/forHerButton')).click()
@@ -21,9 +21,9 @@ def test_onboarding():
 
 
     with allure.step('Выбрать опцию "не включать уведомления"'):
-        browser.element((AppiumBy.ID, 'ua.mad.intertop:id/notNowNotificationButton')).click()
-        browser.element((AppiumBy.ID, 'ua.mad.intertop:id/nextButton')).should(
-            have.text('Не сейчас'))
+        # browser.element((AppiumBy.ID, 'ua.mad.intertop:id/notNowNotificationButton')).click()
+        browser.element((AppiumBy.ID, 'ua.mad.intertop:id/notNowNotificationButton')).should(
+            have.text('Не сейчас')).click()
 
 
     with allure.step('Заголовок главной страницы'):

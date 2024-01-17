@@ -1,31 +1,28 @@
 import os
 import allure
-import allure_commons
 import pytest
-from appium import webdriver
+import allure_commons
+from intertop_tests.utils import attach, path
 from dotenv import load_dotenv
 from selene import browser, support
-from config import config
-from intertop_tests.utils import attach
-from intertop_tests.utils import path
+from appium import webdriver
+
 
 def pytest_addoption(parser):
-    parser.addoption(
-        "--context",
-        default="bstack",
-        choices=['local', 'bstack'],
-        help="Specify the test context"
-    )
+    parser.addoption("--context", default="local", help="Specify context")
 
+
+# def pytest_configure(config):
+#     context = config.getoption("--context")
+#     load_dotenv(dotenv_path=f'.env.{context}')
 
 def pytest_configure(config):
     context = config.getoption("--context")
     env_file_path = path.to_resource(f".env.{context}")
     if os.path.exists(env_file_path):
-        load_dotenv(dotenv_path=env_file_path)
+        load_dotenv(dotenv_path=f'.env.{context}')
     else:
         print(f"Warning: Configuration file '{env_file_path}' not found.")
-
 
 @pytest.fixture
 def context(request):
@@ -34,7 +31,10 @@ def context(request):
 
 @pytest.fixture(scope='function', autouse=True)
 def android_mobile_management(context):
-    options = config.driver_options(context=context)
+    from config import config
+
+    options = config.to_driver_options(context=context)
+
     with allure.step('init app session'):
         browser.config.driver = webdriver.Remote(
             config.remote_url,
@@ -49,7 +49,6 @@ def android_mobile_management(context):
     yield
 
     attach.screenshot()
-
     attach.page_source_xml()
 
     session_id = browser.driver.session_id
@@ -58,4 +57,4 @@ def android_mobile_management(context):
         browser.quit()
 
     if context == 'bstack':
-        attach.bstack_video(session_id)
+        attach.bstack_video(config, session_id)
