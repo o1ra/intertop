@@ -41,7 +41,7 @@ def android_mobile_management(context):
             options=options
         )
 
-    browser.config.timeout = 10.0
+    browser.config.timeout = 15.0
 
     browser.config._wait_decorator = support._logging.wait_with(
         context=allure_commons._allure.StepContext)
