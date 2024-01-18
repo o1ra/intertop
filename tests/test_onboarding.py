@@ -9,7 +9,7 @@ from intertop_tests.utils.country_selection import choice_of_country
 @allure.label("owner", "Irina_Kirillova")
 @allure.label('layer', 'UI')
 @allure.feature("Онбординг")
-@allure.story("Онбординг для неавторизированного пользователя")
+@allure.story("Онбординг для неавторизованного пользователя")
 @allure.title("Прохождение онбординга с выбором чек-боксов")
 def test_onboarding():
     with allure.step('Выбираем страну '):
