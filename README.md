@@ -61,89 +61,75 @@ pip install poetry
 pytest --context=local
 ```
 
-[//]: # (### Для запуска тестов в [Jenkins]&#40;https://jenkins.autotests.cloud/job/008-o11ra-diplom/&#41;)
+### Для запуска тестов в [Jenkins](https://jenkins.autotests.cloud/job/008-o11ra-intertop_diplom/)
 
-[//]: # ()
-[//]: # (1. Открыть проект по [ссылке]&#40;https://jenkins.autotests.cloud/job/008-o11ra-diplom/&#41;)
 
-[//]: # (2. Нажать `Build with Parameters`)
+1. Открыть проект по [ссылке](https://jenkins.autotests.cloud/job/008-o11ra-intertop_diplom/)
 
-[//]: # (3. Установить параметры или оставить по-умолчнанию )
+2. Нажать `Build with Parameters`
 
-[//]: # (4. В поле "COMMENT" ввести комментарий)
+3. Установить параметры или оставить по-умолчнанию 
 
-[//]: # (5. Нажать `Build`)
+4. В поле "COMMENT" ввести комментарий
 
-[//]: # ()
-[//]: # (![jenkins_build]&#40;resources/jenkins_choice_param.png&#41;)
+5. Нажать `Build`
 
-[//]: # (6. Дождаться прохождения тестов)
+![jenkins_build](resources/jenkins_build.png)
 
-[//]: # ()
-[//]: # (![jenkins_build]&#40;resources/tests_are_running.png&#41;)
+6. Дождаться прохождения тестов
 
-[//]: # ()
-[//]: # (#### По итогу будет сформированно 2 отчета : в [Allure Report]&#40;https://jenkins.autotests.cloud/job/008-o11ra-diplom/52/allure/&#41; и [Allure TestOps]&#40;https://allure.autotests.cloud/project/3915/dashboards&#41;)
 
-[//]: # ()
-[//]: # (----)
+![jenkins_build](resources/tests_are_running.png)
 
-[//]: # ()
-[//]: # (### Allure-отчет)
 
-[//]: # ()
-[//]: # (Для перехода к отчету, нужно выбрать соответствующую иконку отчета:)
+#### По итогу будет сформированно 2 отчета : в [Allure Report](https://jenkins.autotests.cloud/job/008-o11ra-intertop_diplom/12/allure/) и [Allure TestOps](https://allure.autotests.cloud/project/3985/dashboards)
 
-[//]: # ()
-[//]: # (<img alt="This is an image" height="300" src="resources/allure_report.png"/>)
 
-[//]: # ()
-[//]: # (#### Пример отчета )
+----
 
-[//]: # ()
-[//]: # (![This is an image]&#40;resources/allure_rep.png&#41;)
 
-[//]: # ()
-[//]: # (Во вклвдке `Behaviors` есть более подробная информация о этапах прохождения каждого теста, а так же прикрепленные видео, логи, скриншоты, разметка страницы)
+### Allure-отчет
 
-[//]: # ()
-[//]: # (![This is an image]&#40;resources/attachments.png&#41;)
 
-[//]: # ()
-[//]: # (----)
+Для перехода к отчету, нужно выбрать соответствующую иконку отчета:
 
-[//]: # ()
-[//]: # (### Allure TestOps)
 
-[//]: # ()
-[//]: # (#### Общий список всех кейсов, имеющихся в системе)
+<img alt="This is an image" height="300" src="resources/allure_running.png"/>
 
-[//]: # (![This is an image]&#40;resources/test_cases.png&#41;)
 
-[//]: # ()
-[//]: # (#### Пример dashboard с общими результатами тестирования)
+#### Пример отчета 
 
-[//]: # (![This is an image]&#40;resources/dashboard.png&#41;)
 
-[//]: # ()
-[//]: # (----)
+![This is an image](resources/allure_result.png)
 
-[//]: # (### Интеграция с Jira)
 
-[//]: # ()
-[//]: # ([//]: # &#40;<img alt="This is an image" height="300" src="resources/jira.png"/>&#41;)
-[//]: # ()
-[//]: # (![This is an image]&#40;resources/jira.png&#41;)
+Во вклвдке `Behaviors` есть более подробная информация о этапах прохождения каждого теста, а так же прикрепленные видео, логи, скриншоты, разметка страницы
 
-[//]: # ()
-[//]: # (----)
 
-[//]: # (### Оповещение о результатах прохождения тестов в Telegram)
+![This is an image](resources/attachments.png)
 
-[//]: # ()
-[//]: # (<img alt="This is an image" height="300" src="resources/telegram_tests.png"/>)
 
-[//]: # ()
-[//]: # (----)
+----
 
-[//]: # (### Пример видео прохождения автотеста "Выполнние поиска квартиры в аренду")
+### Allure TestOps
+
+#### Общий список всех кейсов, имеющихся в системе
+![This is an image](resources/test_cases.png)
+
+#### Пример dashboard с общими результатами тестирования
+![This is an image](resources/dashboard.png)
+
+----
+### Интеграция с Jira
+
+[//]: # (<img alt="This is an image" height="300" src="resources/jira.png"/>)
+
+![This is an image](resources/jira.png)
+
+----
+### Оповещение о результатах прохождения тестов в Telegram
+
+<img alt="This is an image" height="300" src="resources/telegram_tests.png"/>
+
+----
+### Пример видео прохождения автотеста "Выполнние поиска квартиры в аренду"

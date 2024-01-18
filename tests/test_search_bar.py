@@ -28,7 +28,7 @@ def test_search():
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/nextButton')).should(
             have.text('Далее')).click()
 
-    with allure.step('Выбраем опцию "не включать уведомления"'):
+    with allure.step('Выбираем опцию "не включать уведомления"'):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/notNowNotificationButton')).should(
             have.text('Не сейчас')).click()
 

@@ -2,6 +2,7 @@ import allure
 from allure_commons.types import Severity
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
+
 from intertop_tests.utils.country_selection import choice_of_country
 
 
@@ -19,7 +20,7 @@ def test_search_catalog():
     with allure.step('Выбираем пол пользователя'):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/forHerButton')).click()
 
-    with allure.step('Нажаимаем кнопку "Далее"'):
+    with allure.step('Нажимаем кнопку "Далее"'):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/nextButton')).click()
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/nextButton')).should(
             have.text('Далее'))
@@ -27,7 +28,7 @@ def test_search_catalog():
     with allure.step('Нажимаем кнопку "Далее"'):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/nextButton')).click()
 
-    with allure.step('Выбраем опцию "не включать уведомления"'):
+    with allure.step('Выбираем опцию "не включать уведомления"'):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/notNowNotificationButton')).should(
             have.text('Не сейчас')).click()
 
@@ -46,15 +47,15 @@ def test_search_catalog():
         product_1 = browser.element((AppiumBy.XPATH,
                                      '//android.widget.FrameLayout['
                                      '@resource-id="ua.mad.intertop:id/productCardViewListing"])[1]'))
-    with allure.step("Выбраем вкладку товаров для девочек "):
+
+    with allure.step("Выбираем вкладку товаров для девочек "):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/genderGirls')).click()
 
     with allure.step("Проверяем что выборка товаров сменилась "):
-        with allure.step('Проверяем товары в выдаче'):
-            results = browser.all((AppiumBy.XPATH, '//android.widget.FrameLayout'))
-            results.should(have.size_greater_than(0))
-            product_2 = browser.element((AppiumBy.XPATH,
-                                         '//android.widget.FrameLayout['
-                                         '@resource-id="ua.mad.intertop:id/productCardViewListing"])[1]'))
+        results = browser.all((AppiumBy.XPATH, '//android.widget.FrameLayout'))
+        results.should(have.size_greater_than(0))
+        product_2 = browser.element((AppiumBy.XPATH,
+                                     '//android.widget.FrameLayout['
+                                     '@resource-id="ua.mad.intertop:id/productCardViewListing"])[1]'))
 
-            assert product_1 != product_2, "Товары не могут быть одинаковыми"
+        assert product_1 != product_2, "Товары не могут быть одинаковыми"
