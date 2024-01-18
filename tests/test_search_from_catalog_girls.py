@@ -4,6 +4,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
 from intertop_tests.utils.country_selection import choice_of_country
 
+
 @allure.tag("mobile")
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "Irina_Kirillova")
@@ -43,7 +44,8 @@ def test_search_catalog():
         results = browser.all((AppiumBy.XPATH, '//android.widget.FrameLayout'))
         results.should(have.size_greater_than(0))
         product_1 = browser.element((AppiumBy.XPATH,
-                                  '//android.widget.FrameLayout[@resource-id="ua.mad.intertop:id/productCardViewListing"])[1]'))
+                                     '//android.widget.FrameLayout['
+                                     '@resource-id="ua.mad.intertop:id/productCardViewListing"])[1]'))
     with allure.step("Выбраем вкладку товаров для девочек "):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/genderGirls')).click()
 
@@ -52,7 +54,7 @@ def test_search_catalog():
             results = browser.all((AppiumBy.XPATH, '//android.widget.FrameLayout'))
             results.should(have.size_greater_than(0))
             product_2 = browser.element((AppiumBy.XPATH,
-                                      '//android.widget.FrameLayout[@resource-id="ua.mad.intertop:id/productCardViewListing"])[1]'))
+                                         '//android.widget.FrameLayout['
+                                         '@resource-id="ua.mad.intertop:id/productCardViewListing"])[1]'))
 
-
-            assert product_1 != product_2, ("Товары не могут быть одинаковыми")
+            assert product_1 != product_2, "Товары не могут быть одинаковыми"

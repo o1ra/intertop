@@ -43,7 +43,7 @@ def test_search():
         browser.element((AppiumBy.XPATH, '//android.widget.TextView[@text="Кроссовки"]')).click()
 
     with allure.step('Проверяем товары в выдаче'):
-        results = browser.all((AppiumBy.XPATH, '//android.widget.TextView[@resource-id="ua.mad.intertop:id/productCartName"]'))
+        results = browser.all((AppiumBy.XPATH, '//android.widget.TextView['
+                                               '@resource-id="ua.mad.intertop:id/productCartName"]'))
         results.should(have.size_greater_than(0))
         results.first.should(have.text('Кроссовки'))
-
