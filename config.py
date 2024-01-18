@@ -48,7 +48,7 @@ class Settings(BaseModel):
         return options
 
 
-config = Settings(context='local')
+config = Settings(context='bstack')
 
 
 

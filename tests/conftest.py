@@ -9,7 +9,7 @@ from appium import webdriver
 
 
 def pytest_addoption(parser):
-    parser.addoption("--context", default="local", help="Specify context")
+    parser.addoption("--context", default="bstack", help="Specify context")
 
 
 # def pytest_configure(config):
