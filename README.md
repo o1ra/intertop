@@ -133,4 +133,6 @@ pytest --context=local
 
 ----
 ### Пример видео прохождения автотеста "Онбординг для неавторизованного пользователя"
-![Онбординг](resources/onboarding.gif)
+<div align="center">
+  <img src="resources/onboarding.gif" alt="Онбординг">
+</div>
