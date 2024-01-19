@@ -31,7 +31,7 @@
 * Отчеты Allure Report
 * Интеграция с Allure TestOps
 * Автоматизация отчетности о тестовых прогонах и тест-кейсах в Jira
-* Запуск web/UI автотестов в Selenoid
+* Запуск автотестов удаленно в Browserstack
 
 
 ### Покрываемый функционал
@@ -55,7 +55,7 @@
 #### Для локального запуска
 1. Склонируйте репозиторий
 2. Откройте проект в PyCharm
-3. Введите в терминале команду
+3. Введите в терминале команду:
 
 ``` 
 python -m venv .venv
@@ -124,8 +124,6 @@ pytest --context=local
 
 ----
 ### Интеграция с Jira
-
-[//]: # (<img alt="This is an image" height="300" src="resources/jira.png"/>)
 
 ![This is an image](resources/jira.png)
 
