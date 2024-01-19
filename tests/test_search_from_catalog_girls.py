@@ -12,7 +12,7 @@ from intertop_tests.utils.country_selection import choice_of_country
 @allure.label('layer', 'UI')
 @allure.feature("Поиск")
 @allure.story("Поиск из каталога")
-@allure.title("Поиск из каталога товара для девочек")
+@allure.title("Поиск товара из каталога для девочек")
 def test_search_catalog():
     with allure.step('Выбираем страну '):
         choice_of_country()
