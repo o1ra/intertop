@@ -18,6 +18,9 @@
 <a href="https://qameta.io/"><img src="resources/img/allure_testops.png" width="40" height="40"  alt="ALLURETESTOPS"/></a>
 <a href="https://aerokube.com/selenoid/"><img src="resources/img/selenoid.png" width="40" height="40"  alt="SELENOID"/></a>
 <a href="https://www.atlassian.com/software/jira"><img src="resources/img/jira.png" width="40" height="40"  alt="JIRA"/></a>
+<a href="https://developer.android.com/studio"><img title="Android Studio" src="resources/img/android-studio.png" width="40px"/></a>
+<a href="https://www.browserstack.com/"><img title="Browserstack" src="resources/img/Browserstack.svg" width="40px"/></a>
+<a href="https://appium.io/docs/en/2.4/"><img src="resources/img/appium.png" width="40px"  alt="Appium"/></a>
 </p>
 
 ### Особенности проекта
