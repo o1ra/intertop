@@ -16,7 +16,8 @@ def test_onboarding():
         choice_of_country()
 
     with allure.step('Выбираем пол пользователя'):
-        browser.element((AppiumBy.ID, 'ua.mad.intertop:id/forHimButton')).click()
+        browser.element((AppiumBy.ID, 'ua.mad.intertop:id/forHimButton')).should(
+            have.text('Для него')).click()
 
     with allure.step('Выбираем все чек-боксы'):
         browser.element((AppiumBy.XPATH, '//android.widget.CheckBox[1]')).click()

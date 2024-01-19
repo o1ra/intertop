@@ -18,7 +18,8 @@ def test_search_catalog():
         choice_of_country()
 
     with allure.step('Выбираем пол пользователя'):
-        browser.element((AppiumBy.ID, 'ua.mad.intertop:id/forHerButton')).click()
+        browser.element((AppiumBy.ID, 'ua.mad.intertop:id/forHerButton')).should(
+            have.text('Для неё')).click()
 
     with allure.step('Нажимаем кнопку "Далее"'):
         browser.element((AppiumBy.ID, 'ua.mad.intertop:id/nextButton')).click()
