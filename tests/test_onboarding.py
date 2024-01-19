@@ -4,6 +4,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have, be
 from intertop_tests.utils.country_selection import choice_of_country
 
+
 @allure.tag("mobile")
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "Irina_Kirillova")

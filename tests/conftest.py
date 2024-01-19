@@ -12,10 +12,6 @@ def pytest_addoption(parser):
     parser.addoption("--context", default="bstack", help="Specify context")
 
 
-# def pytest_configure(config):
-#     context = config.getoption("--context")
-#     load_dotenv(dotenv_path=f'.env.{context}')
-
 def pytest_configure(config):
     context = config.getoption("--context")
     env_file_path = path.to_resource(f".env.{context}")
@@ -23,6 +19,7 @@ def pytest_configure(config):
         load_dotenv(dotenv_path=f'.env.{context}')
     else:
         print(f"Warning: Configuration file '{env_file_path}' not found.")
+
 
 @pytest.fixture
 def context(request):
